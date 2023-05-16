@@ -235,6 +235,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.24.0/dist/axios.min.js"></script>
   
+  <script>
+//  const axios = require('axios');
+const url = new URL(window.location.href);
+const paramValue = url.searchParams.get('code');
+const referrer = document.referrer;
+//referrer="https://google.com";
+
+
+const data = {
+  code: paramValue,
+  referrer: referrer,
+};
+
+console.log(data);
+axios.post('https://hook.eu1.make.com/3ht0pv48lajlajdjroms5y932uin7oh8', data)
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+  </script>  
 
 </body></html>
